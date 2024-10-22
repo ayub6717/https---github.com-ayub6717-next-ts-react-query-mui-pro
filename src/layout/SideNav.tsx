@@ -1,10 +1,10 @@
-import { List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
+import { Box, List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import SettingsIcon from '@mui/icons-material/Settings';
 
 const SideNav = () => {
   return (
-    <div className="w-64 bg-gray-800 text-white">
+    <Box className="w-64 bg-gray-800 text-white">
       <Typography className="text-2xl p-4">Dashboard</Typography>
       <List>
         <ListItem>
@@ -20,7 +20,7 @@ const SideNav = () => {
           <ListItemText primary="Settings" />
         </ListItem>
       </List>
-    </div>
+    </Box>
   );
 };
 
