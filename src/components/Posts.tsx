@@ -3,14 +3,14 @@
 import React, { useState } from 'react';
 import { Box, Typography, Card, CardContent, Button, CircularProgress, Alert } from '@mui/material';
 import PostForm from './PostForm';
-import { Post } from '../types/types';
 import { usePosts } from '@/app/hooks/usePosts';
+import { postTypes } from '@/types/types';
 
 const Posts: React.FC = () => {
     const { posts, isLoading, fetchError, createPost, deletePost, updatePost } = usePosts();
-    const [editingPost, setEditingPost] = useState<Post | null>(null);
+    const [editingPost, setEditingPost] = useState<postTypes | null>(null);
 
-    const handleCreateOrUpdatePost = (post: Post) => {
+    const handleCreateOrUpdatePost = (post: postTypes) => {
         if (editingPost) {
             updatePost(post);
             setEditingPost(null);

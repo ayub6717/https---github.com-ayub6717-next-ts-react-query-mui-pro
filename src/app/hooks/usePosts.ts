@@ -1,29 +1,29 @@
 // hooks/usePosts.ts
-import { Post } from '@/types/types';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import apiService from '../api/apiService';
+import { postTypes } from '@/types/types';
 
 
-const fetchPosts = async (): Promise<Post[]> => {
-    return apiService<Post[]>('/posts', 'GET');
+const fetchPosts = async (): Promise<postTypes[]> => {
+    return apiService<postTypes[]>('/posts', 'GET');
 };
 
-const createPost = async (newPost: Post): Promise<Post> => {
-    return apiService<Post>('/posts', 'POST', newPost);
+const createPost = async (newPost: postTypes): Promise<postTypes> => {
+    return apiService<postTypes>('/posts', 'POST', newPost);
 };
 
 const deletePost = async (postId: number): Promise<void> => {
     return apiService<void>(`/posts/${postId}`, 'DELETE');
 };
 
-const updatePost = async (updatedPost: Post): Promise<Post> => {
-    return apiService<Post>(`/posts/${updatedPost.id}`, 'PUT', updatedPost);
+const updatePost = async (updatedPost: postTypes): Promise<postTypes> => {
+    return apiService<postTypes>(`/posts/${updatedPost.id}`, 'PUT', updatedPost);
 };
 
 export const usePosts = () => {
     const queryClient = useQueryClient();
 
-    const postsQuery = useQuery<Post[], Error>({
+    const postsQuery = useQuery<postTypes[], Error>({
         queryKey: ['posts'],
         queryFn: fetchPosts,
     });

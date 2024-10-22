@@ -1,15 +1,15 @@
 // components/PostForm.tsx
 import React, { useState, useEffect } from 'react';
 import { Box, Button, TextField } from '@mui/material';
-import { Post } from '../types/types';
+import { postTypes } from '@/types/types';
 
 interface PostFormProps {
-    onSubmit: (post: Post) => void;
-    initialPost?: Post | null;
+    onSubmit: (post: postTypes) => void;
+    initialPost?: postTypes | null;
 }
 
 const PostForm: React.FC<PostFormProps> = ({ onSubmit, initialPost }) => {
-    const [post, setPost] = useState<Post>({
+    const [post, setPost] = useState<postTypes>({
         userId: Date.now(),
         id: Date.now(),
         title: '',
@@ -25,7 +25,7 @@ const PostForm: React.FC<PostFormProps> = ({ onSubmit, initialPost }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         onSubmit(post);
-        setPost({ userId: Date.now(), id: Date.now(), title: '', body: '' });
+         setPost({ userId: Date.now(), id: Date.now(), title: '', body: '' });
     };
 
     return (
