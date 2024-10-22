@@ -1,11 +1,11 @@
-import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { List, ListItem, ListItemIcon, ListItemText, Typography } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import SettingsIcon from '@mui/icons-material/Settings';
 
 const SideNav = () => {
   return (
     <div className="w-64 bg-gray-800 text-white">
-      <h1 className="text-2xl p-4">Dashboard</h1>
+      <Typography className="text-2xl p-4">Dashboard</Typography>
       <List>
         <ListItem>
           <ListItemIcon className="text-white">
