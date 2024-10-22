@@ -4,7 +4,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 const SideNav = () => {
   return (
-    <div className="h-screen w-64 bg-gray-800 text-white">
+    <div className="w-64 bg-gray-800 text-white">
       <h1 className="text-2xl p-4">Dashboard</h1>
       <List>
         <ListItem>
