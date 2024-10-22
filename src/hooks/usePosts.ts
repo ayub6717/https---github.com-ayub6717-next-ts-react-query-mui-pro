@@ -1,7 +1,7 @@
 // hooks/usePosts.ts
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import apiService from '../api/apiService';
 import { postTypes } from '@/types/types';
+import apiService from '@/app/api/apiService';
 
 
 const fetchPosts = async (): Promise<postTypes[]> => {
@@ -26,6 +26,8 @@ export const usePosts = () => {
     const postsQuery = useQuery<postTypes[], Error>({
         queryKey: ['posts'],
         queryFn: fetchPosts,
+        refetchOnWindowFocus: true, // Refetch data when window is focused
+        refetchInterval: 10000, // Refetch data every 5 seconds
     });
 
     const createMutation = useMutation({

@@ -3,8 +3,8 @@
 import React, { useState } from 'react';
 import { Box, Typography, Card, CardContent, Button, CircularProgress, Alert } from '@mui/material';
 import PostForm from './PostForm';
-import { usePosts } from '@/app/hooks/usePosts';
 import { postTypes } from '@/types/types';
+import { usePosts } from '@/hooks/usePosts';
 
 const Posts: React.FC = () => {
     const { posts, isLoading, fetchError, createPost, deletePost, updatePost } = usePosts();
