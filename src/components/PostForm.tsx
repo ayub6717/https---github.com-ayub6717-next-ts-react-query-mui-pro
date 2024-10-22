@@ -1,6 +1,6 @@
 // components/PostForm.tsx
 import React, { useState, useEffect } from 'react';
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
 import { postTypes } from '@/types/types';
 
 interface PostFormProps {
@@ -32,7 +32,7 @@ const PostForm: React.FC<PostFormProps> = ({ onSubmit, initialPost }) => {
         <form onSubmit={handleSubmit}>
             <Box >
                 <Box className="w-full max-w-sm min-w-[200px]">
-                    <h1>Title</h1>
+                    <Typography>Title</Typography>
                     <input className="w-full mt-0.5 bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Type here..."
                         value={post.title}
                         onChange={(e) => setPost({ ...post, title: e.target.value })}
@@ -41,7 +41,7 @@ const PostForm: React.FC<PostFormProps> = ({ onSubmit, initialPost }) => {
 
                 <Box className="w-96">
                     <Box className="relative w-full min-w-[200px]">
-                        <h1 className='mt-2'>Body</h1>
+                        <Typography className='mt-2'>Body</Typography>
                         <textarea
                             className="h-full mt-0.5 min-h-[100px] w-full resize-none rounded-[7px] border border-slate-400 bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:outline-0 disabled:resize-none disabled:bg-blue-gray-50"
                             placeholder=" "
